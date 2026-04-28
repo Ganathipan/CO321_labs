@@ -1,0 +1,3 @@
+# Ignore executable and HEX output files
+*.exe
+*.hex
