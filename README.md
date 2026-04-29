@@ -75,7 +75,23 @@ This creates a HEX file that can be uploaded to the microcontroller.
 
 Connect the Arduino Uno to your computer using a USB cable.
 
-Check the available serial ports:
+If you are using WSL2, run `usbipd` on Windows PowerShell, not inside Linux/WSL.
+
+If `usbipd` is not recognized in PowerShell, install `usbipd-win` on Windows first:
+
+```powershell
+winget install --id dorssel.usbipd-win -e
+```
+
+Then list and attach the board from Windows PowerShell:
+
+```powershell
+usbipd list
+usbipd bind --busid <BUSID>
+usbipd attach --wsl --busid <BUSID>
+```
+
+After attaching, check inside WSL with:
 
 ```bash
 ls /dev/ttyACM*
