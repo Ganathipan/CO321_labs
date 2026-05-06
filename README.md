@@ -49,7 +49,7 @@ cd CO321_labs
 3. Compile the C Program
 
 ```bash
-avr-gcc -Os -DF_CPU=16000000UL -mmcu=atmega328p -o led led.c
+avr-gcc -Os -DF_CPU=16000000UL -mmcu=atmega328p -o main.elf main.c
 ```
 
 Command explanation:
@@ -60,13 +60,13 @@ Command explanation:
 | `-Os` | Optimize code size |
 | `-DF_CPU=16000000UL` | Define CPU frequency as 16 MHz |
 | `-mmcu=atmega328p` | Select ATmega328P microcontroller |
-| `-o led` | Output file name |
-| `led.c` | Source file |
+| `-o main` | Output file name |
+| `main.c` | Source file |
 
 4. Generate the HEX File
 
 ```bash
-avr-objcopy -O ihex -R .eeprom led led.hex
+avr-objcopy -O ihex -R .eeprom main.elf main.hex
 ```
 
 This creates a HEX file that can be uploaded to the microcontroller.
@@ -108,7 +108,7 @@ Common Arduino serial ports are:
 Use the detected port when uploading the program.
 
 ```bash
-avrdude -F -V -c arduino -p ATMEGA328P -P /dev/ttyACM0 -b 115200 -U flash:w:led.hex
+avrdude -F -V -c arduino -p ATMEGA328P -P /dev/ttyACM0 -b 115200 -U flash:w:main.hex
 ```
 
 Command explanation:
@@ -120,7 +120,7 @@ Command explanation:
 | `-p ATMEGA328P` | Target microcontroller |
 | `-P /dev/ttyACM0` | Serial port |
 | `-b 115200` | Baud rate |
-| `-U flash:w:led.hex` | Write `led.hex` to flash memory |
+| `-U flash:w:main.hex` | Write `main.hex` to flash memory |
 
 6. Fix Serial Port Permission Issues
 
