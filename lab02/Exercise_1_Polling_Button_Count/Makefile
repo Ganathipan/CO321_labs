@@ -4,7 +4,7 @@
 MCU        = atmega328p
 F_CPU      = 16000000UL
 PROGRAMMER = arduino
-PORT       = COM3
+PORT       = /dev/ttyACM0
 BAUD       = 115200
 TARGET     = main
 

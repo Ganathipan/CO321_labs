@@ -21,7 +21,7 @@
 
 #define BUTTON_PIN      PD7
 #define LED_MASK        0x3F        // PB0-PB5 = lower 6 bits
-#define DEBOUNCE_MS     25
+#define DEBOUNCE_MS     150
 
 static void display_count(uint8_t count)
 {

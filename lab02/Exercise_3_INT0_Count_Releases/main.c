@@ -20,8 +20,8 @@
 #include <stdint.h>
 
 #define BUTTON_INT0_PIN PD2
-#define LED_MASK        0x3F        // PB0-PB5
-#define DEBOUNCE_MS     25
+#define LED_MASK        0x1F        // PB0-PB5
+#define DEBOUNCE_MS     50
 
 volatile uint8_t release_count = 0;
 
